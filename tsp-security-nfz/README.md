@@ -2,7 +2,7 @@
 
 Here's the coordinates table in Markdown format:
 
-|Points|-| Latitude  | Longitude |-|
+|Nr.|Points| Latitude  | Longitude |Description|
 |--|-|-----------|-----------|-|
 |1|E| -27.67142 | -48.54058 |Integration with the airport area.|
 |2|F| -27.67593 | -48.56567 |Florianopolis Air Base.|
