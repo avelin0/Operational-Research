@@ -48,3 +48,6 @@ Here's the table in Markdown format:
 |  8 |   7 |   6 |   4 |   3 |   3 |   1 |   3 |   . |   2 |
 |  9 |   8 |   7 |   5 |   5 |   2 |   4 |   1 |   2 |   . |
 
+
+![image](https://github.com/avelin0/Operational-Research/assets/12461215/3c5f5616-a1dc-414a-97fe-324407eab168)
+
