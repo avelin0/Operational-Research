@@ -51,3 +51,27 @@ Here's the table in Markdown format:
 
 ![image](https://github.com/avelin0/Operational-Research/assets/12461215/3c5f5616-a1dc-414a-97fe-324407eab168)
 
+Solucao Aleatoria 2:
+(1,3),(3,4),(4,9),(9,7),(7,2),(2,8),(8,1)
+dist = 50.08
+risk = 30
+
+Solucao Aleatoria:
+(1,4),(4,7),(7,9),(9,2),(2,3),(3,8),(8,1) 
+dist = 45.727
+risk = 25
+
+Minimizando so o risco: 
+(1,2),(2,3),(3,7),(7,9),(9,8),(8,4),(4,1)
+dist = 34.407
+risk = 15
+
+Minimizando so a distancia:
+dist = 33.344
+risk = 19
+
+Otimo
+(1,3),(3,7),(7,9),(9,8),(8,4),(4,2),(2,1)
+dist = 33.329
+risk = 15
+
