@@ -1,6 +1,7 @@
 # TSP - Security Risk + NFZ
 
 - [X] Points description
+
 |Nr.|Points| Latitude  | Longitude |Description|NFZ|
 |--|-|-----------|-----------|-|-|
 |1|A| -27.59326 | -48.55176 |Metropolitan Area.|-|
