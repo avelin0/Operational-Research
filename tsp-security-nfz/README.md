@@ -53,27 +53,32 @@ Here's the table in Markdown format:
 
 - [X] Solutions
 
-Aleatory 1:
-(1,4),(4,7),(7,9),(9,2),(2,3),(3,8),(8,1) 
-dist = 45.727
-risk = 25
-
-Aleatory 2:
+- Random Solution 2:
 (1,3),(3,4),(4,9),(9,7),(7,2),(2,8),(8,1)
+A-C-D-I-G-B-H-A
 dist = 50.08
 risk = 30
 
-Minimizing only risk: 
+- Random Solution 1:
+(1,4),(4,7),(7,9),(9,2),(2,3),(3,8),(8,1) 
+A-D-G-I-B-C-H-A
+dist = 45.727
+risk = 25
+
+-  Minimizing only risk: 
 (1,2),(2,3),(3,7),(7,9),(9,8),(8,4),(4,1)
+A-B-C-G-I-H-D-A
 dist = 34.407
 risk = 15
 
-Minimizing only distance:
-dist = 33.344
+- Minimizing only distance
+(1,2),(2,4),(4,9),(9,7),(7,8),(8,3),(3,1)
+A-B-D-I-G-H-C-A
+dist = 32.344
 risk = 19
 
-Multi-objective Optimum value:
+- Multi Objective Optimum Solution
 (1,3),(3,7),(7,9),(9,8),(8,4),(4,2),(2,1)
+A-C-G-I-H-D-B-A
 dist = 33.329
 risk = 15
-
