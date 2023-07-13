@@ -1,7 +1,6 @@
 # TSP - Security Risk + NFZ
 
-Here's the coordinates table in Markdown format:
-
+- [X] Points description
 |Nr.|Points| Latitude  | Longitude |Description|NFZ|
 |--|-|-----------|-----------|-|-|
 |1|A| -27.59326 | -48.55176 |Metropolitan Area.|-|
@@ -14,26 +13,26 @@ Here's the coordinates table in Markdown format:
 |8|H| -27.61013 | -48.47585 |Conflict area in popular tourist routes frequented by helicopters|-|
 |9|I| -27.67799 | -48.42475 |Maritime monitoring area and product delivery to offshore platforms|-|
 
-
+- [X] Points in Map
 ```geojson
 {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"descrição":"Integração com área de aeroporto","letra":"e"},"geometry":{"coordinates":[-48.540577179137415,-27.671422137162196],"type":"Point"},"id":0},{"type":"Feature","properties":{"descrição":"Base Aérea de Florianópolis - 2º Esquadrão do 7º Grupo de Aviação","letra":"f"},"geometry":{"coordinates":[-48.56566790514921,-27.675930258082644],"type":"Point"},"id":1},{"type":"Feature","properties":{"descrição":"área industrial","letra":"d"},"geometry":{"coordinates":[-48.52509636671357,-27.615609439201847],"type":"Point"}},{"type":"Feature","properties":{"descrição":"bairro não tão perto da cidade","letra":"b"},"geometry":{"coordinates":[-48.53558784624806,-27.60659198856831],"type":"Point"}},{"type":"Feature","properties":{"descrição":"área metropolitana","letra":"a"},"geometry":{"coordinates":[-48.55176243236028,-27.593260258436075],"type":"Point"}},{"type":"Feature","properties":{"descrição":"bairro afastado","letra":"c"},"geometry":{"coordinates":[-48.50346749120868,-27.578913616488954],"type":"Point"}},{"type":"Feature","properties":{"descrição":"área de praia com possível apoio","letra":"g"},"geometry":{"coordinates":[-48.45649179749506,-27.636479362331634],"type":"Point"},"id":6},{"type":"Feature","properties":{"descrição":"Conflitos em rotas turísticas populadas por helicópteros","letra":"h"},"geometry":{"coordinates":[-48.4758534389978,-27.610134265333556],"type":"Point"}},{"type":"Feature","properties":{"descrição":"Monitoramento marítimo e entrega de produtos em plataforma de petróleo","letra":"i"},"geometry":{"coordinates":[-48.42475106534704,-27.677998240992387],"type":"Point"},"id":8}]}
 ```
 
-Distance Matrix
-|    |   1 |      2 |      3 |      4 |      5 |      6 |      7 |      8 |      9 |
-|----|-----|--------|--------|--------|--------|--------|--------|--------|--------|
-|  1 |   0 | 2.8099 | 4.467  | 4.8195 | 5.9035 | 7.9829 | 9.7004 | 8.5035 | 12.889 |
-|  2 | 2.8099 |      0 | 6.3396 | 6.115  | 6.2952 | 9.9587 | 12.485 | 11.107 | 15.671 |
-|  3 | 4.467  | 6.3396 |      0 | 1.3434 | 3.3936 |  3.624 | 7.7832 | 5.4907 | 12.074 |
-|  4 | 4.8195 |  6.115 | 1.3434 |      0 | 2.0504 | 4.1156 | 9.0686 | 6.6476 | 13.408 |
-|  5 | 5.9035 | 6.2952 | 3.3936 | 2.0504 |      0 | 5.474  | 11.065 | 8.5327 | 15.450 |
-|  6 | 7.9829 | 9.9587 |  3.624 | 4.1156 | 5.4739 |      0 | 6.7379 | 3.8412 | 11.416 |
-|  7 | 9.7004 | 12.485 | 7.7832 | 9.0686 |  11.065 | 6.7379 |      0 | 2.9036 | 4.6791 |
-|  8 | 8.5035 | 11.107 | 5.4907 | 6.6476 | 8.5327 | 3.8412 | 2.9036 |      0 | 7.5824 |
-|  9 | 12.889 | 15.671 | 12.074 | 13.408 |  15.450 | 11.416 | 4.6791 | 7.5824 |      0 |
+- [X] Distance Matrix
 
+|   |   1    |   2    |   3    |   4    |   5    |   6    |   7    |   8    |   9    |
+|---|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 1 |   0    | 2.049  | 5.473  | 3.391  | 5.887  | 6.277  | 11.06  | 8.532  | 15.44  |
+| 2 | 2.049  |   0    | 4.112  | 1.342  | 4.805  | 6.102  | 9.067  | 6.647  | 13.4   |
+| 3 | 5.473  | 4.112  |   0    | 3.618  | 7.965  | 9.943  | 6.73   | 3.837  | 11.4   |
+| 4 | 3.391  | 1.342  | 3.618  |   0    | 4.456  | 6.33   | 7.782  | 5.49   | 12.07  |
+| 5 | 5.887  | 4.805  | 7.965  | 4.456  |   0    | 2.81   | 9.698  | 8.496  | 12.89  |
+| 6 | 6.277  | 6.102  | 9.943  | 6.33   | 2.81   |   0    | 12.48  | 11.1   | 15.67  |
+| 7 | 11.06  | 9.067  | 6.73   | 7.782  | 9.698  | 12.48  |   0    | 2.9    | 4.673  |
+| 8 | 8.532  | 6.647  | 3.837  | 5.49   | 8.496  | 11.1   | 2.9    |   0    | 7.572  |
+| 9 | 15.44  | 13.4   | 11.4   | 12.07  | 12.89  | 15.67  | 4.673  | 7.572  |   0    |
 
-Security Risk Matrix 
+- [X] Security Risk Matrix 
 Here's the table in Markdown format:
 
 |    |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |   9 |
@@ -51,7 +50,7 @@ Here's the table in Markdown format:
 
 ![image](https://github.com/avelin0/Operational-Research/assets/12461215/3c5f5616-a1dc-414a-97fe-324407eab168)
 
-
+- [X] Solutions
 Aleatory 1:
 (1,4),(4,7),(7,9),(9,2),(2,3),(3,8),(8,1) 
 dist = 45.727
