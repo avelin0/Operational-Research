@@ -4,12 +4,12 @@ Here's the coordinates table in Markdown format:
 
 |Nr.|Points| Latitude  | Longitude |Description|
 |--|-|-----------|-----------|-|
-|1|E| -27.67142 | -48.54058 |Integration with the airport area.|
-|2|F| -27.67593 | -48.56567 |Florianopolis Air Base.|
-|3|D| -27.61561 | -48.52510 |Industrial zone.|
-|4|B| -27.60659 | -48.53559 |Neighborhood with less orderly urban planning.|
-|5|A| -27.59326 | -48.55176 |Metropolitan Area.|
-|6|C| -27.57891 | -48.50347 |Remote residential area.|
+|1|A| -27.59326 | -48.55176 |Metropolitan Area.|
+|2|B| -27.60659 | -48.53559 |Neighborhood with less orderly urban planning.|
+|3|C| -27.57891 | -48.50347 |Remote residential area.|
+|4|D| -27.61561 | -48.52510 |Industrial zone.|
+|5|E| -27.67142 | -48.54058 |Integration with the airport area.|
+|6|F| -27.67593 | -48.56567 |Florianopolis Air Base.|
 |7|G| -27.63648 | -48.45649 |Beach area with potential drone support|
 |8|H| -27.61013 | -48.47585 |Conflict area in popular tourist routes frequented by helicopters|
 |9|I| -27.67799 | -48.42475 |Maritime monitoring area and product delivery to offshore platforms|
