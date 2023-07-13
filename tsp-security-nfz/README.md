@@ -1,8 +1,32 @@
 # TSP - Security Risk + NFZ
 
-'''geojson 
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"descrição":"Integração com área de aeroporto","letra":"e"},"geometry":{"coordinates":[-48.540577179137415,-27.671422137162196],"type":"Point"},"id":0},{"type":"Feature","properties":{"descrição":"Base Aérea de Florianópolis - 2º Esquadrão do 7º Grupo de Aviação","letra":"f"},"geometry":{"coordinates":[-48.56566790514921,-27.675930258082644],"type":"Point"},"id":1},{"type":"Feature","properties":{"descrição":"área industrial","letra":"d"},"geometry":{"coordinates":[-48.52509636671357,-27.615609439201847],"type":"Point"}},{"type":"Feature","properties":{"descrição":"bairro não tão perto da cidade","letra":"b"},"geometry":{"coordinates":[-48.53558784624806,-27.60659198856831],"type":"Point"}},{"type":"Feature","properties":{"descrição":"área metropolitana","letra":"a"},"geometry":{"coordinates":[-48.55176243236028,-27.593260258436075],"type":"Point"}},{"type":"Feature","properties":{"descrição":"bairro afastado","letra":"c"},"geometry":{"coordinates":[-48.50346749120868,-27.578913616488954],"type":"Point"}},{"type":"Feature","properties":{"descrição":"área de praia com possível apoio","letra":"g"},"geometry":{"coordinates":[-48.45649179749506,-27.636479362331634],"type":"Point"},"id":6},{"type":"Feature","properties":{"descrição":"Conflitos em rotas turísticas populadas por helicópteros","letra":"h"},"geometry":{"coordinates":[-48.4758534389978,-27.610134265333556],"type":"Point"}},{"type":"Feature","properties":{"descrição":"Monitoramento marítimo e entrega de produtos em plataforma de petróleo","letra":"i"},"geometry":{"coordinates":[-48.42475106534704,-27.677998240992387],"type":"Point"},"id":8}]}
-'''
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "ID": 0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+              [-90,35],
+              [-90,30],
+              [-85,30],
+              [-85,35],
+              [-90,35]
+          ]
+        ]
+      }
+    }
+  ]
+}
+```
+
 Distance Matrix
 |    |   1 |      2 |      3 |      4 |      5 |      6 |      7 |      8 |      9 |
 |----|-----|--------|--------|--------|--------|--------|--------|--------|--------|
