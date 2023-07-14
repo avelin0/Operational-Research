@@ -1,0 +1,73 @@
+using DelimitedFiles
+using Distances
+
+inputFilename="p1.4.r.txt"
+outputFilename="tmp.txt"
+# TODO: read in ; format also
+
+# 1. remove cabecalho
+function rm3Lines(inFilename,outFilename)
+    open(inFilename) do f
+        io = open(outFilename, "w")
+        i = 1
+        for l in eachline(f)
+           i != 1 && i != 2 && i !=3 && println(io, l) 
+           i += 1
+        end
+        close(io)
+    end
+end
+
+# 2.ler output como matriz, pega tamanho e apaga arquivo
+function fromFoutDoMatrix(outputFilename)
+    matrixA = readdlm(outputFilename,Float64)
+    rm(outputFilename)
+    return matrixA    
+end
+
+
+# 3. transforma em pontos (tuplas)
+# inicializa array
+function fromMatrixDoTuplas(matrixA)
+    points = [] 
+    siz = size(matrixA)
+    for n in 1:siz[1]
+        push!(points,(matrixA[n], matrixA[n+siz[1]] ))
+    end
+    return points
+end
+
+# 4. A partir dos pontos, gera a matriz distancia
+function genMatrixDistance(mPoints)
+    s = size(mPoints)[1]
+    A = zeros(s,s)
+    for n in 1:s
+        for m in 1:s
+            A[n,m] = sqrt( (mPoints[n][1] - mPoints[m][1])^2 + (mPoints[n][2] - mPoints[m][2])^2 )
+        end
+    end
+    return A 
+end
+
+
+rm3Lines(inputFilename,outputFilename)
+mat = fromFoutDoMatrix(outputFilename)
+points = fromMatrixDoTuplas(mat)
+matrixDistance = genMatrixDistance(points)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
