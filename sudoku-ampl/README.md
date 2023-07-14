@@ -18,13 +18,10 @@ $$ \sum_{i=1}^{9}x_{ijk} = 1\  for\ j\ = 1..9, k = 1..9 $$
 $$ \sum_{3_{i0} - 2 }^{3_{i0}} \sum_{3_{j0} - 2}^{3_{j0}} x_{ijk} = 1\  for\ i_0 = 1..3, j_0 = 1..3 $$
 
 ## AMPL CODE (.mod)
-![](sudoku-ampl-mod.png)
+![image](https://github.com/avelin0/Operational-Research/assets/12461215/6d701adf-56fa-4d48-adb3-03fb182c1280)
+![image](https://github.com/avelin0/Operational-Research/assets/12461215/fc7da47a-3cdc-407f-b18d-bbba06311c4b)
+
 [sudoku.mod](sudoku.mod)
 
-
-## AMPL PRINT (.dat) 
-![](sudoku-ampl-dat.png)
-[sudoku.dat](sudoku.dat)
-
 ## RESULT
-![](sudoku-ampl-result.png)
+![image](https://github.com/avelin0/Operational-Research/assets/12461215/b98e6adb-f3be-4ae3-8dd3-ce30580d43ab)
