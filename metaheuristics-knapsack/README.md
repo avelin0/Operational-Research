@@ -67,5 +67,152 @@ Improvement Heuristics:
 
 Metaheuristic:
 - [X]  GRASP
+```python
+def grasp(lrc, tempo, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
+    ini = time.time()
+    achouT = time.time()
+    melhorFO = float("-inf") #obtendo valor infinito negativo
+    lrc = int((lrc * numObj) / 100) #calculando o % da LRC com base nos objetos
+    mSol = [0] * numObj
+    while 1:
+        sol = heuConAleGul(lrc, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+        sol = heuPrimeiraMelhora(sol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc) #busca local
+        FO = calcFO(sol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+        if FO > melhorFO:
+            mSol = sol
+            melhorFO = FO
+            achouT = time.time()
+        fim = time.time()
+        if fim <= (ini + tempo): #verifica se deve continuar executando
+            continue
+        else:
+            break
+    return mSol, (achouT - ini)
+```
 - [X]  Simulated Annealing
+```python
+def SimulatedAnnealing(samax, ti, tc, tx, solIni, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
+    # gerando a semente
+    rand.seed()
+
+    ini = time.time()
+    achouT = time.time()
+    #guarda a solucao inicial como a melhor
+    mSol = solIni
+    mFO = calcFO(mSol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+    # TODO: Sol Ini vazia
+    # atribui a melhor solucao a sol atual
+    sol = cpy.copy(mSol)
+    FO = calcFO(sol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+    #inicializa a temperatura
+    temp = ti
+    while temp > tc:
+        #enquanto a temperatura inicial e maior que a temp de congelamento
+        for i in range(samax):
+            #solucao vizinha inicia a partir da solucao atual
+            vSol = cpy.copy(sol)
+            #sorteia uma solucao vizinha
+            vSol[rand.randint(0, numObj-1)] = rand.randint(0, numMoc)
+            #calcula a FO da solucao vizinha
+            vFO = calcFO(vSol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+            #calculando a variacao
+            delta = FO - vFO
+            
+            if delta < 0:
+                #se a variacao e negativa entao aceita
+                sol = cpy.copy(vSol)
+                if vFO > mFO:
+                    #se a FO da vizinha e melhor que a FO da FO global aceita
+                    mSol = cpy.copy(vSol)
+                    achouT = time.time()
+            else:
+                if rand.random() < mat.exp(-(FO - vFO) / temp):
+                    #se nao e melhor mas aceita piorar
+                    sol = cpy.copy(vSol)
+            
+        #resfria a temperatura
+        temp *= tx
+        
+    return mSol, (achouT - ini)
+```      
 - [X]  Tabu Search
+```python
+def buscaTabu(tempo, T, solIni, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
+    ini = time.time()
+    achouT = time.time()
+    qtd = 0
+    lista = np.zeros([2, T])
+    mSol = solIni
+    #calcula a FO da solucao
+    mFOGlobal = calcFO(mSol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+    sol = cpy.copy(mSol)
+    while 1:
+        #melhor vizinho
+        mFO = float("-inf") #obtendo valor infinito negativo
+        mO = -1
+        mM = -1
+        
+        for i in range(numObj):
+            moc = sol[i] #guarda a mochila atual do objeto
+            for j in range(numMoc):
+                #verificar a posicao da lista Tabu
+                pos = -1
+                aspirou = 0
+                for k in range(T):
+                    if lista[0, k] == i and lista[1, k] == j:
+                        pos = k
+                        break
+            
+                if pos == -1:
+                    #a configuracao nao esta na lista tabu
+                    sol[i] = j
+                    FO = calcFO(sol, numObj, numMoc, vetValObj, vetPesObj,
+                                   vetCapMoc)
+                    if FO > mFO:
+                        mO = i
+                        mM = j
+                        mFO = FO
+                else:
+                    #esta na lista tabu, mas a FO e melhor que a FO Global
+                    sol[i] = j
+                    FO = CF.calcFO(sol, numObj, numMoc, vetValObj, vetPesObj,
+                                   vetCapMoc)
+                    if FO > mFOGlobal:
+                        #aspiracao por objetivo
+                        mO = i
+                        mM = j
+                        mFO = FO
+                        #salva um flag para nao incluir na lista tabu novamente
+                        aspirou = 1
+                        #ajustando para mochila original
+                sol[i] = moc
+                        
+        #atualizando a lista Tabu
+        if mO != -1:
+            #algum vizinho foi aceito
+            sol[mO] = mM #o objeto na posicao aceita recebe a melhor mochila
+            FO = mFO #atualiza a FO
+            if (aspirou == 0): #nao usou o criterio de aspiracao
+                lista[0, qtd] = mO
+                lista[1, qtd] = mM
+                qtd += 1
+                if qtd >= T:
+                    qtd = 0
+        else:
+            #nenhum vizinho aceito
+            sol[lista[0,0]] = lista[1,0] #realiza a aspiracao por default
+            FO = calcFO(sol, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc)
+        
+        if FO > mFOGlobal:
+            mSol = cpy.copy(sol)
+            achouT = time.time()
+
+        fim = time.time()
+        #verifica se deve continuar executando
+        if fim <= (ini + tempo):
+            continue
+        else:
+            break
+    
+    return mSol, (achouT - ini)
+```      
