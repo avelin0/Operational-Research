@@ -1,5 +1,5 @@
 # KNAPSACK - MH
-Constructive Heuristics:
+## Constructive Heuristics:
 - [X] Aleatory
 ```python
 def heuConstrutivaAleatoria(numObj, numMoc):
@@ -61,7 +61,7 @@ def heuConAleGul(lrc, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
     return sol
 ```
 
-Improvement Heuristics:
+## Improvement Heuristics:
 - [X]  First Improvement
 ```python
 def heuPrimeiraMelhora(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc):
@@ -113,7 +113,7 @@ def heuMelhorMelhora(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc):
     return solucao
 ```
 
-Metaheuristic:
+## Metaheuristic:
 - [X]  GRASP
 ```python
 def grasp(lrc, tempo, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
