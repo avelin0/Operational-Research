@@ -63,7 +63,55 @@ def heuConAleGul(lrc, numObj, numMoc, vetValObj, vetPesObj, vetCapMoc):
 
 Improvement Heuristics:
 - [X]  First Improvement
+```python
+def heuPrimeiraMelhora(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc):
+    while 1:
+        #obtem a FO da solucao atual
+        mFO = calcFO(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc)
+        #inicializa a variavel de controle da interrupcao da busca
+        melhorou = False
+        for i in range(numObj):
+            mAtual = solucao[i] #guarda a mochila atual
+        for j in range(numMoc):
+            solucao[i] = j #altera a mochila e calcula a FO com a nova
+            solucao
+            FOAtual = calcFO(solucao, numObj, numMoc, valObj, vetPesObj,vetCapMoc)
+        if FOAtual > mFO: #se melhorar entao guarda as informacoes
+            melhorou = True #registra q melhorou
+            mFO = FOAtual #guarda a melhor FO
+            break #sai do laco de mochilas
+        if melhorou:
+            break #sai do laco de objetos
+        else:
+            solucao[i] = mAtual #restaura a mochila atual
+        if not melhorou: #se nao melhorou interrompe
+            break
+    return solucao
+```
 - [X]  Best Improvement
+```python
+def heuMelhorMelhora(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc):
+    while 1:
+        mFO = calcFO(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc) #obtem a FO da solucao atualAula 9. Heurísticas 131
+        #inicializa as variaveis que vao armazenar. o controle de troca de objeto e mochila
+        mO = -1
+        mM = -1
+        for i in range(numObj):
+            mAtual = solucao[i] #guarda a mochila atual
+            for j in range(numMoc):
+                solucao[i] = j #altera a mochila e calcula a FO da nova solucao
+                FOAtual = calcFO(solucao, numObj, numMoc, valObj, vetPesObj, vetCapMoc)
+                if FOAtual > mFO: #se melhorar entao guarda as posicoes
+                    mO = i
+                    mM = j
+                    mFO = FOAtual            
+            solucao[i] = mAtual #restaura a mochila atual
+        if mO != -1: #se verdadeiro entao houve melhora
+            solucao[mO] = mM #guarda a melhora que ocorreu
+        else:
+            break #se nao tem como mais melhorar, termina
+    return solucao
+```
 
 Metaheuristic:
 - [X]  GRASP
